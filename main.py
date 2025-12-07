@@ -12,7 +12,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 
-bot = commands.Bot(command_prefix='!', intents=intents)
+bot = commands.Bot(command_prefix='+', intents=intents)
 
 secret_role = "Gamer"
 
@@ -81,5 +81,6 @@ async def secret(ctx):
 async def secret_error(ctx, error):
     if isinstance(error, commands.MissingRole):
         await ctx.send("You do not have permission to do that!")
+
 
 bot.run(token, log_handler=handler, log_level=logging.DEBUG)
